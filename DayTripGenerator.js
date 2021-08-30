@@ -12,30 +12,53 @@
 //Display completed trip in console
 
 //
-function getRandomTrip([i]){
-    return Math.floor(Math.random() * [i].length);
+function getRandomTrip(arrayToGetSelectionFrom){
+    let selectionNumber = Math.floor(Math.random() * arrayToGetSelectionFrom.length)
+    return arrayToGetSelectionFrom[selectionNumber];
 }
 
 let destination = ["Fiji", "Belize", "Sydney", "Cabo San Lucas", "New Zealand"];
-let randomDestination = destination[Math.floor(Math.random() * destination.length)];
+let randomDestination = getRandomTrip(destination)
 console.log(randomDestination);  
 //
 let restaurant = ["Burger King", "Taco Bell", "Popeye's", "Fudruckers", "Smashburger"];
-let randomRestaurant = restaurant[Math.floor(Math.random() * restaurant.length)];
+let randomRestaurant = getRandomTrip(restaurant);
 console.log(randomRestaurant);
 //
 let transportation = ["Plane", "Boat", "Teleportation", "Submarine", "Jet Pack"];
-let randomTransportation = transportation[Math.floor(Math.random() * transportation.length)];
+let randomTransportation = getRandomTrip(transportation);
 console.log(randomTransportation);
 //
 let entertainment = ["Juggling", "Fire Eating", "Underwater Basket Weaving", "Bearded Lady Opera", "Gladitorial Combat"];
-let randomEntertainment = entertainment[Math.floor(Math.random() * entertainment.length)];
+let randomEntertainment = getRandomTrip(entertainment)
 console.log(randomEntertainment);
 
 let userInput = prompt("Are you happy with your trip and ready to go?");
-if(userInput === "Yes") {
-    alert("Here we go!");
-}
-else if(userInput === "No") {
-    alert("No problem, lets see what else is available...");
-}
+while(userInput === "no") {
+    getRandomTrip(destination);
+    console.log(randomDestination);
+    getRandomTrip(restaurant);
+    console.log( randomRestaurant);
+    getRandomTrip(transportation);
+    console.log(randomTransportation);
+    getRandomTrip(entertainment);
+    console.log(randomEntertainment);
+    userInput = "yes";
+} 
+console.log("Trip Complete");
+ userInput = prompt("Are you happy with your trip now?");
+ if(userInput === "no"){
+ getRandomTrip(destination);
+ console.log(randomDestination);
+ getRandomTrip(restaurant);
+ console.log( randomRestaurant);
+ getRandomTrip(transportation);
+ console.log(randomTransportation);
+ getRandomTrip(entertainment);
+ console.log(randomEntertainment); 
+ alert("Okay, maybe we can work out a trip for you some other time")
+ userInput = "no"
+} else {
+   console.log("Trip Complete")
+ }
+
