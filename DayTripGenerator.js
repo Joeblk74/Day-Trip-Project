@@ -30,18 +30,18 @@ let randomTransportation = getRandomTrip(transportation);
 console.log(randomTransportation);
 //
 let entertainment = ["Juggling", "Fire Eating", "Underwater Basket Weaving", "Bearded Lady Opera", "Gladitorial Combat"];
-let randomEntertainment = getRandomTrip(entertainment)
+let randomEntertainment = getRandomTrip(entertainment);
 console.log(randomEntertainment);
 
 let userInput = prompt("Are you happy with your trip and ready to go?");
 while(userInput === "no") {
-    getRandomTrip(destination);
+   randomDestination = getRandomTrip(destination);
     console.log(randomDestination);
-    getRandomTrip(restaurant);
+    randomRestaurant = getRandomTrip(restaurant);
     console.log( randomRestaurant);
-    getRandomTrip(transportation);
+    randomTransportation = getRandomTrip(transportation);
     console.log(randomTransportation);
-    getRandomTrip(entertainment);
+    randomEntertainment = getRandomTrip(entertainment);
     console.log(randomEntertainment);
     userInput = "yes";
 } 
