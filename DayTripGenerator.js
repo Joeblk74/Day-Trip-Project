@@ -44,7 +44,8 @@ function generateDayTrip(){
          console.log(randomTransportation);
        randomEntertainment = getRandomTrip(entertainment);
          console.log(randomEntertainment);
-       userInput = "yes";
+         userInput = prompt("Are you happy with your trip and ready to go");
+      //  userInput = "yes";
    } 
    console.log("Trip Complete");
     userInput = prompt("Are you happy with your trip now?");
